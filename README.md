@@ -18,7 +18,7 @@ An Android app that allows you to make a impressionist painting with a picture o
 
 ###Code
 * **ImpressionistView.Java** is a custom view and is the canvas of where the user can draw the impressionist painting
-* **MainActivity.Java** handles the all buttons on the button
+* **MainActivity.Java** handles the all buttons on the main screen
 
 ###USAGE
 Download, open, and run on Android studio
