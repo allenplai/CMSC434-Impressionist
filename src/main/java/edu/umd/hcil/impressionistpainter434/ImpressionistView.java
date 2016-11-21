@@ -40,9 +40,9 @@ public class ImpressionistView extends View {
     private float _minBrushRadius = 5;
 
 
-    // added
+    // added by Allen
     private Bitmap _imageViewBitmap;
-    private Rect _imageViewRect;        // the rectangle coordinates to check if valid
+    private Rect _imageViewRect;        // the rectangle coordinates to check if it is valid to getPixel
     private VelocityTracker _velocityTracker = null;
 
 
@@ -86,8 +86,6 @@ public class ImpressionistView extends View {
         _paintBorder.setAlpha(50);
 
         //_paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.MULTIPLY));
-
-
 
     }
 
@@ -165,26 +163,19 @@ public class ImpressionistView extends View {
 
         _imageViewRect = getBitmapPositionInsideImageView(_imageView);
 
-
-
-
-
         switch(motionEvent.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 if(_velocityTracker == null) {
-                    // Retrieve a new VelocityTracker object to watch the velocity of a motion.
                     _velocityTracker = VelocityTracker.obtain();
                 } else {
-                    // Reset the velocity tracker back to its initial state.
-                    _velocityTracker.clear();
+                    _velocityTracker.clear(); // Reset the velocity tracker back to its initial state.
+
                 }
-                // Add a user's movement to the tracker.
                 _velocityTracker.addMovement(motionEvent);
             case MotionEvent.ACTION_MOVE:
                 _velocityTracker.addMovement(motionEvent);
-                // When you want to determine the velocity, call
-                // computeCurrentVelocity(). Then call getXVelocity()
-                // and getYVelocity() to retrieve the velocity for each pointer ID.
+                // Determine the velocity by calling computeCurrentVelocity(). Then call getVelocity()
+                //  to retrieve the velocity for each pointer ID.
                 _velocityTracker.computeCurrentVelocity(1000);  // 1000 for pixels per second
 
                 int index = motionEvent.getActionIndex();
