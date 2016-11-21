@@ -3,7 +3,7 @@ CMSC434-Impressionist
 
 An Android app that allows you to make a impressionist painting with a picture on your phone.
 
-![demo](http://imgur.com/a/6Z8ll)
+![demo](http://imgur.com/a/3CBmb)
 
 
 
